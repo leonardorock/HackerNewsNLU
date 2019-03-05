@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A7CDB57F222DE90C00EE57D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB57E222DE90C00EE57D3 /* AppDelegate.swift */; };
-		A7CDB581222DE90C00EE57D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB580222DE90C00EE57D3 /* ViewController.swift */; };
 		A7CDB584222DE90C00EE57D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CDB582222DE90C00EE57D3 /* Main.storyboard */; };
 		A7CDB586222DE90F00EE57D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7CDB585222DE90F00EE57D3 /* Assets.xcassets */; };
 		A7CDB589222DE90F00EE57D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7CDB587222DE90F00EE57D3 /* LaunchScreen.storyboard */; };
 		A7CDB594222DE90F00EE57D3 /* HackerNewsNLUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB593222DE90F00EE57D3 /* HackerNewsNLUTests.swift */; };
+		A7CDB59F222DE9B000EE57D3 /* NewsArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB59E222DE9B000EE57D3 /* NewsArticles.swift */; };
+		A7CDB5A2222DEAD400EE57D3 /* NewsArticlesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB5A1222DEAD400EE57D3 /* NewsArticlesService.swift */; };
+		A7CDB5A5222DED0900EE57D3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB5A4222DED0900EE57D3 /* Service.swift */; };
+		A7CDB5A7222DEF3400EE57D3 /* NewsArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB5A6222DEF3400EE57D3 /* NewsArticlesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +31,6 @@
 /* Begin PBXFileReference section */
 		A7CDB57B222DE90C00EE57D3 /* HackerNewsNLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNewsNLU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CDB57E222DE90C00EE57D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7CDB580222DE90C00EE57D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7CDB583222DE90C00EE57D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7CDB585222DE90F00EE57D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7CDB588222DE90F00EE57D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +38,10 @@
 		A7CDB58F222DE90F00EE57D3 /* HackerNewsNLUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackerNewsNLUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7CDB593222DE90F00EE57D3 /* HackerNewsNLUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsNLUTests.swift; sourceTree = "<group>"; };
 		A7CDB595222DE90F00EE57D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7CDB59E222DE9B000EE57D3 /* NewsArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticles.swift; sourceTree = "<group>"; };
+		A7CDB5A1222DEAD400EE57D3 /* NewsArticlesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesService.swift; sourceTree = "<group>"; };
+		A7CDB5A4222DED0900EE57D3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		A7CDB5A6222DEF3400EE57D3 /* NewsArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticlesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				A7CDB57E222DE90C00EE57D3 /* AppDelegate.swift */,
-				A7CDB580222DE90C00EE57D3 /* ViewController.swift */,
 				A7CDB582222DE90C00EE57D3 /* Main.storyboard */,
+				A7CDB5A8222DEF3A00EE57D3 /* Controllers */,
+				A7CDB5A3222DEADA00EE57D3 /* Service */,
+				A7CDB5A0222DE9B500EE57D3 /* Models */,
 				A7CDB585222DE90F00EE57D3 /* Assets.xcassets */,
 				A7CDB587222DE90F00EE57D3 /* LaunchScreen.storyboard */,
 				A7CDB58A222DE90F00EE57D3 /* Info.plist */,
@@ -94,6 +102,31 @@
 				A7CDB595222DE90F00EE57D3 /* Info.plist */,
 			);
 			path = HackerNewsNLUTests;
+			sourceTree = "<group>";
+		};
+		A7CDB5A0222DE9B500EE57D3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7CDB59E222DE9B000EE57D3 /* NewsArticles.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A7CDB5A3222DEADA00EE57D3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A7CDB5A4222DED0900EE57D3 /* Service.swift */,
+				A7CDB5A1222DEAD400EE57D3 /* NewsArticlesService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A7CDB5A8222DEF3A00EE57D3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A7CDB5A6222DEF3400EE57D3 /* NewsArticlesTableViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +230,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7CDB581222DE90C00EE57D3 /* ViewController.swift in Sources */,
+				A7CDB5A2222DEAD400EE57D3 /* NewsArticlesService.swift in Sources */,
+				A7CDB5A5222DED0900EE57D3 /* Service.swift in Sources */,
+				A7CDB59F222DE9B000EE57D3 /* NewsArticles.swift in Sources */,
 				A7CDB57F222DE90C00EE57D3 /* AppDelegate.swift in Sources */,
+				A7CDB5A7222DEF3400EE57D3 /* NewsArticlesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
