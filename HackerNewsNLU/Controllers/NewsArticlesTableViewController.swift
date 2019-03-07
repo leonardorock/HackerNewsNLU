@@ -20,7 +20,11 @@ class NewsArticlesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        service.getArticles(success: { [weak self] (articles) in
+        fetchArticles()
+    }
+    
+    func fetchArticles() {
+        service.fetchArticles(success: { [weak self] (articles) in
             self?.articles = articles
         }, failure: { [weak self] (error) in
             self?.present(error: error)
