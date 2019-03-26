@@ -37,18 +37,17 @@ extension Service {
         return baseURL.appendingPathComponent(endpoint)
     }
     
-    func request<T: Codable>(url: URL, method: HTTPMethod = .get, success: @escaping (T) -> Void, failure: @escaping (Error) -> Void, completion: @escaping () -> Void) {
+    func request<T: Codable>(url: URL, method: HTTPMethod = .get, completion: @escaping (Result<T, Error>) -> Void) {
         let session = URLSession(configuration: .default)
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         urlRequest.allHTTPHeaderFields = headers
         let datatask = session.dataTask(with: urlRequest) { (data, response, error) in
             session.finishTasksAndInvalidate()
-            defer { DispatchQueue.main.async { completion() } }
             guard let data = data else {
                 if let error = error {
                     DispatchQueue.main.async {
-                        failure(error)
+                        completion(.failure(error))
                     }
                 }
                 return
@@ -56,11 +55,11 @@ extension Service {
             do {
                 let decodedResponse = try self.jsonDecoder.decode(T.self, from: data)
                 DispatchQueue.main.async {
-                    success(decodedResponse)
+                    completion(.success(decodedResponse))
                 }
             } catch {
                 DispatchQueue.main.async {
-                    failure(error)
+                    completion(.failure(error))
                 }
             }
         }

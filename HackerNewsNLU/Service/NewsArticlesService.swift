@@ -14,8 +14,8 @@ public class NewsArticlesService: Service {
     
     public lazy var jsonDecoder = JSONDecoder()
     
-    public func fetchArticles(success: @escaping ([NewsArticles]) -> Void, failure: @escaping (Error) -> Void, completion: @escaping () -> Void) {
-        request(url: resourceURL, success: success, failure: failure, completion: completion)
+    public func fetchArticles(completion: @escaping (Result<[NewsArticles], Error>) -> Void) {
+        request(url: resourceURL, completion: completion)
     }
     
 }

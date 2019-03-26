@@ -24,11 +24,14 @@ class NewsArticlesTableViewController: UITableViewController {
     }
     
     func fetchArticles() {
-        service.fetchArticles(success: { [weak self] (articles) in
-            self?.articles = articles
-        }, failure: { [weak self] (error) in
-            self?.present(error: error)
-        }, completion: {})
+        service.fetchArticles { [weak self] (result) in
+            switch result {
+            case .success(let articles):
+                self?.articles = articles
+            case .failure(let error):
+                self?.present(error: error)
+            }
+        }
     }
 
     func present(error: Error) {
